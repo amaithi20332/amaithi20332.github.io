@@ -421,7 +421,7 @@ gal.innerHTML=cur.map((g,j)=>`<button data-i="${j}" aria-label="View ${g[1]}"><d
 gt.addEventListener('click',e=>{const b=e.target.closest('button');if(b)gshow([...gt.children].indexOf(b))});
 gshow(0);
 const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');let last=null;
-const open=j=>{ci=(j+cur.length)%cur.length;const g=cur[ci];lbi.src='img/'+g[0];lbi.alt=g[1];lbc.textContent=g[1]+' · '+g[2]+' ('+(ci+1)+' of '+cur.length+')';lb.classList.add('on');document.getElementById('lbx').focus()};
+const open=j=>{ci=(j+cur.length)%cur.length;const g=cur[ci];lbi.src=g[0];lbi.alt=g[1];lbc.textContent=g[1]+' · '+g[2]+' ('+(ci+1)+' of '+cur.length+')';lb.classList.add('on');document.getElementById('lbx').focus()};
 const close=()=>{lb.classList.remove('on');if(last)last.focus()};
 gal.addEventListener('click',e=>{const b=e.target.closest('button');if(b){last=b;open(+b.dataset.i)}});
 document.getElementById('lbx').onclick=close;document.getElementById('lbp').onclick=()=>open(ci-1);document.getElementById('lbn').onclick=()=>open(ci+1);
