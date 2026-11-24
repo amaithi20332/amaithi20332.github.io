@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amaithi Priya S · Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: formal, assured, evidence-led — a banker's annual report with a product mind.
+   IDEA: an annual-report spread: a statement of results, then the notes behind each number.
+   PICTURE: many accounts flowing through one consent check into a single app view, in deep teal.
+   COLOUR and TYPE: deep teal #0f4c5c field, white paper, ink #1b2430, coral #e76f51 for the one point; Source Serif 4 titles, Inter text.
+   LAYOUT: teal hero with results card lapping over it, timeline, tabbed case studies, experiments, proof, writing, about, contact. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0b1a1f);--paper:light-dark(#f4f7f8,#0f2329);--card:light-dark(#ffffff,#13292f);
+--ink:light-dark(#1b2430,#e6eef0);--soft:light-dark(#56606c,#9fb2b7);--line:light-dark(#dfe6e9,#23414a);
+--brand:#0f4c5c;--brand2:light-dark(#1f7a8c,#5cc0cf);--mint:light-dark(#e3f2f1,#16343b);--acc:#e76f51;--acc2:light-dark(#c2492c,#f29a83)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,3.6vw,42px);margin-bottom:10px}
+h3{font-size:22px;line-height:1.25}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(48px,6vw,88px) max(5vw,18px)}
+.kick{font-size:14px;font-weight:600;color:var(--brand2);margin-bottom:8px}
+.lede{color:var(--soft);max-width:62ch;margin:0 0 32px;font-size:17px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 24px;padding:12px max(5vw,18px)}
+.brand{font:700 19px/1 "Source Serif 4",Georgia,serif;text-decoration:none;margin-right:auto}
+.links{display:flex;flex-wrap:wrap;gap:4px 20px}
+.links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--soft);padding:8px 0;border-bottom:2px solid transparent}
+.links a.on,.links a:hover{color:var(--ink);border-color:var(--brand2)}
+.cta{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:8px;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+
+.hero{background:linear-gradient(135deg,#0c3a47 0%,#0f4c5c 55%,#1a6677 100%);color:#fff;padding-bottom:clamp(110px,12vw,150px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero .kick{color:#9fd8cb}
+.hero h1{font-size:clamp(38px,5vw,56px);margin:6px 0 20px;line-height:1.05}
+.hero p{font-size:18px;max-width:52ch;margin:0 0 28px;color:#d7e7ea}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.btn.p{background:#fff;color:#0f4c5c;border-color:#fff}
+.art{width:100%;height:auto;display:block;max-height:430px}
+.flow{stroke-dasharray:6 8;animation:f 2.6s linear infinite}
+@keyframes f{to{stroke-dashoffset:-56}}
+
+.results{margin:calc(-1 * clamp(80px,9vw,110px)) auto 0;max-width:1180px;padding:0 max(5vw,18px);position:relative;z-index:2}
+.rcard{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px -18px rgba(12,58,71,.35);display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.rcard div{padding:26px 22px;border-right:1px solid var(--line)}
+.rcard div:last-child{border-right:0}
+.rcard strong{display:block;font:700 clamp(28px,3vw,36px)/1 "Source Serif 4",Georgia,serif;color:var(--brand2);margin-bottom:8px;white-space:nowrap}
+.rcard div:first-child strong{color:var(--acc2)}
+.rcard span{font-size:14px;color:var(--soft);line-height:1.45;display:block}
+.rnote{font-size:13px;color:var(--soft);margin:10px 4px 0}
+
+.tl{list-style:none;margin:0;padding:0;position:relative;max-width:860px}
+.tl:before{content:"";position:absolute;left:118px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:38px;padding:0 0 26px;position:relative}
+.tl li:after{content:"";position:absolute;left:112px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--brand2)}
+.tl li.big:after{background:var(--acc);border-color:var(--acc)}
+.tl time{font-weight:600;font-size:15px;white-space:nowrap;text-align:right}
+.tl b{display:block;font-size:17px}
+.tl p{margin:2px 0 0;color:var(--soft);font-size:15px}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:22px;scrollbar-width:thin}
+.tabs button{flex:none;font:600 15px Inter,sans-serif;min-height:46px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--brand);border-color:var(--brand);color:#fff}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3.4vw,40px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.panel .meta{color:var(--soft);font-size:14px;margin:8px 0 18px}
+.lbl{font-size:13px;font-weight:600;color:var(--brand2);margin:18px 0 4px}
+.panel p{margin:0}
+.panel ul{margin:0;padding-left:20px}
+.panel li{margin-bottom:6px}
+.res{background:var(--mint);border-radius:12px;padding:22px;align-self:start}
+.res div+div{margin-top:18px;padding-top:18px;border-top:1px solid color-mix(in srgb,var(--brand2) 25%,transparent)}
+.res strong{display:block;font:700 30px/1.05 "Source Serif 4",Georgia,serif;color:var(--brand)}
+:root[data-theme=dark] .res strong{color:#9fe0e9}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .res strong{color:#9fe0e9}}
+.res span{font-size:14px;color:var(--soft)}
+
+.bars{display:grid;gap:26px;max-width:880px}
+.bar .l{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:500;margin-bottom:8px}
+.bar .l b{white-space:nowrap;font:700 22px/1 "Source Serif 4",Georgia,serif;color:var(--brand2)}
+.track{height:14px;background:var(--card);border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#0f4c5c,#1f7a8c);border-radius:99px;transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.track i.a{background:linear-gradient(90deg,#c2492c,#e76f51)}
+.bar small{color:var(--soft);display:block;margin-top:6px;font-size:14px}
+
+.proof{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.pf{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.pf:hover{transform:translateY(-3px);box-shadow:0 12px 28px -14px rgba(12,58,71,.4);border-color:var(--brand2)}
+.pf .src{font-size:13px;font-weight:600;color:var(--brand2)}
+.pf h3{font-size:18px}.pf p{margin:0;color:var(--soft);font-size:14px}
+.pf .go{margin-top:auto;padding-top:6px;font-weight:600;color:var(--acc2);font-size:14px}
+.note{color:var(--soft);font-size:14px;margin-top:20px;max-width:78ch}
+
+.rgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,34px)}
+.rc .meta{color:var(--soft);font-size:14px;margin:6px 0 16px}
+.rc ul{margin:8px 0 0;padding-left:20px}.rc li{margin-bottom:6px}
+.gap{display:grid;gap:14px;margin:14px 0 6px}
+.gap .l{display:flex;justify-content:space-between;gap:10px;font-size:15px;font-weight:500;margin-bottom:6px}
+.gap .l b{white-space:nowrap;color:var(--brand2)}
+.dots{display:flex;gap:6px}
+.dots i{flex:1;height:12px;border-radius:4px;background:var(--line)}
+.dots i.y{background:var(--brand2)}
+.big{font:700 clamp(34px,4vw,44px)/1 "Source Serif 4",Georgia,serif;color:var(--brand2);margin:6px 0 4px}
+.trend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.trend div{background:var(--mint);border-radius:10px;padding:12px 14px;font-size:14px}
+.trend b{display:block;font-size:15px}
+.outcome{margin-top:18px;padding:14px 16px;border-left:3px solid var(--acc);background:var(--paper);border-radius:0 10px 10px 0;font-size:15px}
+@media(max-width:900px){.rgrid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.trend{grid-template-columns:minmax(0,1fr)}}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:6px}
+.gal button{all:unset;cursor:pointer;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.gal button:hover,.gal button:focus-visible{transform:translateY(-3px);box-shadow:0 12px 28px -14px rgba(12,58,71,.45);border-color:var(--brand2)}
+.gal button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.gal .th{aspect-ratio:16/10;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.gal img{width:100%;height:100%;object-fit:contain}
+.gal span{padding:12px 14px;font-size:14px;line-height:1.45}
+.gal span b{display:block;font-size:15px;margin-bottom:2px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(6,20,25,.88);display:none;align-items:center;justify-content:center;padding:56px 12px 20px}
+.lb.on{display:flex}
+.lb figure{margin:0;max-width:min(1200px,100%);max-height:100%;display:flex;flex-direction:column;gap:12px;align-items:center}
+.lb img{max-width:100%;max-height:calc(100vh - 150px);object-fit:contain;background:#fff;border-radius:8px}
+.lb figcaption{color:#e6eef0;font-size:15px;text-align:center;max-width:70ch}
+.lb .x,.lb .pv,.lb .nx{position:absolute;min-width:46px;min-height:46px;border-radius:999px;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:22px;cursor:pointer}
+.lb .x{top:10px;right:12px}.lb .pv{left:12px;top:50%}.lb .nx{right:12px;top:50%}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.subh{margin:44px 0 6px;font-size:24px}
+.posts{display:grid;gap:0;max-width:880px;border-top:1px solid var(--line)}
+.post{border-bottom:1px solid var(--line)}
+.post summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:64px;font:600 20px/1.3 "Source Serif 4",Georgia,serif}
+.post summary::-webkit-details-marker{display:none}
+.post summary:after{content:"+";font:400 26px Inter;color:var(--brand2)}
+.post[open] summary:after{content:"–"}
+.post p{max-width:68ch;color:var(--soft);margin:0 0 14px}
+
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px}
+.two p{max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 22px;padding:0;list-style:none}
+.chips li{background:var(--mint);border-radius:6px;padding:6px 12px;font-size:14px;font-weight:500}
+.edu{margin-top:26px;display:grid;gap:14px}
+.edu div{border-left:3px solid var(--brand2);padding-left:14px}
+.edu span{color:var(--soft);font-size:14px}
+
+footer{background:#0c2a33;color:#e6eef0}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end}
+footer h2{color:#fff}
+footer p{color:#b9cdd2;max-width:52ch;margin:0}
+.contact{display:grid;gap:12px}
+.contact a{color:#9fd8cb;font-weight:600}
+.contact span{display:block;font-size:13px;color:#8fa9b0}
+.copy{margin-top:36px;font-size:13px;color:#8fa9b0;border-top:1px solid #1f4550;padding-top:18px}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media(max-width:900px){.rcard{grid-template-columns:repeat(2,minmax(0,1fr))}.rcard div{border-bottom:1px solid var(--line)}.rcard div:nth-child(2n){border-right:0}.rcard div:last-child{grid-column:1/-1;border-bottom:0}.panel,.two,footer .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.cta{display:none}.links{width:100%;gap:2px 16px}
+.tl:before{left:7px}.tl li{grid-template-columns:minmax(0,1fr);gap:2px;padding-left:30px}.tl li:after{left:1px}.tl time{text-align:left}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><div class="wrap">
+<a class="brand" href="#top">Amaithi Priya S</a>
+<div class="links"><a href="#journey">Journey</a><a href="#work">Case studies</a><a href="#research">Research</a><a href="#experiments">Experiments</a><a href="#proof">Proof</a><a href="#writing">Writing</a><a href="#about">About</a></div>
+<a class="cta" href="#contact">Get in touch</a>
+</div></nav>
+
+<header class="hero band" id="top"><div class="wrap">
+<div>
+<div class="kick">Product Manager · ICICI Bank · Bengaluru</div>
+<h1>Building personal finance products that bring every account into one view.</h1>
+<p>I launched <strong>iFinance</strong>, ICICI Bank's Account Aggregator product for linking accounts from any bank, and I'm now building its next phase, the <strong>Financial Dashboard</strong>: investments, loans and insurance in one view. I also lead <strong>Know Your Spends</strong>, the bank's spend-tracking product. I work from evidence: test, measure, then ship in phases.</p>
+<div class="btns"><a class="btn p" href="#work">View case studies</a><a class="btn" href="https://www.linkedin.com/in/amaithipriya/">LinkedIn profile</a></div>
+</div>
+<svg class="art" viewBox="0 0 520 420" role="img" aria-label="Accounts from several banks flowing through one consent check into a single app view">
+<defs><filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#06222a" flood-opacity=".35"/></filter></defs>
+<g filter="url(#sh)" font-family="Inter,sans-serif" font-size="13" fill="#1b2430">
+<g transform="translate(14,36)"><rect width="176" height="76" rx="12" fill="#fff"/><rect x="14" y="16" width="34" height="24" rx="5" fill="#cfe9ec"/><rect x="60" y="18" width="84" height="8" rx="4" fill="#d6dee2"/><rect x="60" y="34" width="56" height="8" rx="4" fill="#eaeff1"/><text x="14" y="63">Bank A · Savings</text></g>
+<g transform="translate(36,138)"><rect width="176" height="76" rx="12" fill="#fff"/><rect x="14" y="16" width="34" height="24" rx="5" fill="#fbe0d8"/><rect x="60" y="18" width="84" height="8" rx="4" fill="#d6dee2"/><rect x="60" y="34" width="56" height="8" rx="4" fill="#eaeff1"/><text x="14" y="63">Bank B · Salary</text></g>
+<g transform="translate(14,240)"><rect width="176" height="76" rx="12" fill="#fff"/><rect x="14" y="16" width="34" height="24" rx="5" fill="#dff0e4"/><rect x="60" y="18" width="84" height="8" rx="4" fill="#d6dee2"/><rect x="60" y="34" width="56" height="8" rx="4" fill="#eaeff1"/><text x="14" y="63">Demat · Stocks, ETFs</text></g>
+<g transform="translate(36,338)"><rect width="176" height="64" rx="12" fill="#fff"/><rect x="14" y="14" width="34" height="22" rx="5" fill="#ece4f4"/><text x="14" y="54">Mutual funds</text></g>
+</g>
+<g fill="none" stroke="#9fd8cb" stroke-width="2.5" class="flow"><path d="M190 74 C250 74 250 200 296 205"/><path d="M212 176 C255 176 260 205 296 208"/><path d="M190 278 C250 278 250 214 296 211"/><path d="M212 370 C262 370 262 218 296 214"/></g>
+<g filter="url(#sh)"><circle cx="300" cy="210" r="23" fill="#e76f51"/><path d="M290 210 l7 7 l13 -14" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="300" y="252" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#d7e7ea">Consent</text>
+<line x1="323" y1="210" x2="350" y2="210" stroke="#9fd8cb" stroke-width="2.5"/>
+<g filter="url(#sh)"><rect x="350" y="36" width="154" height="348" rx="26" fill="#0a2f39" stroke="#2a6b79"/><rect x="362" y="54" width="130" height="312" rx="16" fill="#fff"/></g>
+<text x="376" y="82" font-family="Inter,sans-serif" font-size="11" fill="#56606c">All accounts</text>
+<text x="376" y="108" font-family="Source Serif 4,Georgia,serif" font-size="22" font-weight="700" fill="#0f4c5c">One view</text>
+<g transform="translate(376,124)"><circle cx="52" cy="52" r="40" fill="none" stroke="#eaeff1" stroke-width="15"/>
+<circle cx="52" cy="52" r="40" fill="none" stroke="#0f4c5c" stroke-width="15" stroke-dasharray="110 252" transform="rotate(-90 52 52)"/>
+<circle cx="52" cy="52" r="40" fill="none" stroke="#1f7a8c" stroke-width="15" stroke-dasharray="70 252" stroke-dashoffset="-110" transform="rotate(-90 52 52)"/>
+<circle cx="52" cy="52" r="40" fill="none" stroke="#e76f51" stroke-width="15" stroke-dasharray="40 252" stroke-dashoffset="-180" transform="rotate(-90 52 52)"/></g>
+<g font-family="Inter,sans-serif" font-size="11" fill="#1b2430"><rect x="376" y="248" width="104" height="26" rx="6" fill="#f4f7f8"/><text x="384" y="265">Spends this month</text>
+<rect x="376" y="280" width="104" height="26" rx="6" fill="#f4f7f8"/><text x="384" y="297">Investments</text>
+<rect x="376" y="312" width="104" height="26" rx="6" fill="#fdece7"/><text x="384" y="329">Manage consents</text></g>
+</svg>
+</div></header>
+
+<section class="results" aria-label="Results at a glance">
+<div class="rcard">
+<div><strong data-n="2.6" data-s=" lakh+">2.6 lakh+</strong><span>iFinance users since going live in Aug 2023</span></div>
+<div><strong data-n="5.8" data-s=" lakh+">5.8 lakh+</strong><span>accounts linked from other banks</span></div>
+<div><strong data-n="56" data-s="">56</strong><span>banks connected through Account Aggregator</span></div>
+<div><strong>90% → 5%</strong><span>investment data-fetch failure rate</span></div>
+<div><strong data-n="33" data-p="~" data-s="%">~33%</strong><span>lower running cost from one product change</span></div>
+</div>
+<p class="rnote">Figures to March 2025, from internal product reports.</p>
+</section>
+
+<section class="band" id="journey"><div class="wrap">
+<div class="kick">Journey</div>
+<h2>From launch to today</h2>
+<p class="lede">The milestones behind the numbers, from June 2023 to now.</p>
+<ol class="tl" id="tl"></ol>
+</div></section>
+
+<section class="band" id="work" style="background:var(--paper)"><div class="wrap">
+<div class="kick">Case studies</div>
+<h2>Selected work</h2>
+<p class="lede">Each story covers the problem, what I did and what changed.</p>
+<div class="tabs" role="tablist" aria-label="Case studies" id="tabs"></div>
+<div id="panel" role="tabpanel"></div>
+</div></section>
+
+<section class="band" id="research"><div class="wrap">
+<div class="kick">Research</div>
+<h2>Research that shaped the roadmap</h2>
+<p class="lede">Two pieces of research I put together for Know Your Spends and iFinance: a feature benchmark of banks and apps, and a primer on the personal finance industry.</p>
+<div class="rgrid">
+<article class="rc">
+<h3>Personal finance benchmarking study</h3>
+<div class="meta">2024 · 6 Indian banks (including ICICI) and 13 global personal finance apps, compared feature by feature</div>
+<p>I compared spend tracking, budgeting, bill and subscription tracking, and account linking across Indian banks and global apps such as Mint, Quicken, YNAB, Emma, Empower and Jupiter.</p>
+<div class="lbl">Indian banks that let users link accounts held elsewhere</div>
+<div class="gap" id="gap"></div>
+<p style="font-size:13px;color:var(--soft);margin:0">Each bar is one of the 6 banks studied, at the time of the study.</p>
+<div class="lbl">Key findings</div>
+<ul>
+<li>No Indian bank showed investments or loans held at other institutions; global leaders did</li>
+<li>Only half the banks offered real-time spend categorization, and only a third offered smart budgeting</li>
+<li>Global apps stood out with subscription tracking, net-worth calculators and receipt scanning</li>
+</ul>
+<div class="outcome"><b>What it led to:</b> stocks and ETFs from every broker in iFinance, and the Financial Dashboard, which brings investments, loans and insurance into one view.</div>
+</article>
+<article class="rc">
+<h3>Personal finance management: history and market</h3>
+<div class="meta">2024 · industry primer for stakeholders</div>
+<p>A primer on how personal finance tools evolved, from household ledgers to Quicken and Microsoft Money, then Mint and mobile apps, and now AI and open banking.</p>
+<div class="big">USD 1.5 bn → 4.4 bn</div>
+<p style="color:var(--soft);font-size:14px;margin:0">Global PFM tools market, 2023 to 2030 (about 15.5% a year), from the industry estimates compiled in the primer.</p>
+<div class="lbl">Trends I tracked</div>
+<div class="trend">
+<div><b>AI insights</b>Personalized tips and predictive budgeting</div>
+<div><b>Open banking</b>Account Aggregator brings every account into one view</div>
+<div><b>Automated saving</b>Robo-advisors and goal-based plans</div>
+<div><b>Premium tools</b>Paid tiers for investment analysis</div>
+</div>
+<div class="lbl">Why India, why now</div>
+<ul>
+<li>A growing middle class and UPI-driven digital payments</li>
+<li>Fintechs such as Zerodha and Groww making investing mainstream</li>
+<li>RBI's Account Aggregator framework enabling consented data sharing</li>
+</ul>
+</article>
+</div>
+</div></section>
+
+<section class="band" id="experiments" style="background:var(--paper)"><div class="wrap">
+<div class="kick">Experiments</div>
+<h2>Switch it off to prove it works</h2>
+<p class="lede">I pause features on purpose to measure their real effect. These results decided what we kept.</p>
+<div class="bars">
+<div class="bar"><div class="l">Push notifications: growth in users in one month <b>+219%</b></div><div class="track"><i class="a" data-w="100"></i></div><small>When we paused them, users fell 29% the next month, so notifications stayed on.</small></div>
+<div class="bar"><div class="l">In-app tooltip: growth in accounts linked over two weeks <b>+19%</b></div><div class="track"><i class="a" data-w="19"></i></div><small>Removing it cut accounts linked by 39%.</small></div>
+<div class="bar"><div class="l">Investment data-fetch success after chunking <b>~0% → 88%</b></div><div class="track"><i data-w="88"></i></div><small>Splitting long history requests into smaller time windows fixed the main depositories.</small></div>
+</div>
+</div></section>
+
+<section class="band" id="proof"><div class="wrap">
+<div class="kick">Proof</div>
+<h2>Proof of work</h2>
+<p class="lede">Public sources that show the products are live, plus screens, report pages and research slides from my own work.</p>
+<div class="proof" id="prooflist"></div>
+<h3 class="subh">Documents and screens</h3>
+<p class="lede" style="margin-bottom:18px">Select any image to view it full size.</p>
+<div class="tabs" role="tablist" aria-label="Document proofs" id="gtabs"></div>
+<div class="gal" id="gal"></div>
+<p class="note">Screens show sample or masked data. On report pages, internal figures and vendor names are blacked out, and the comparison with other Indian banks is left out. Usage figures elsewhere on this page come from internal reports; I'm happy to walk through how each was measured.</p>
+</div></section>
+
+<section class="band" id="writing" style="background:var(--paper)"><div class="wrap">
+<div class="kick">Writing</div>
+<h2>Notes on building finance products</h2>
+<p class="lede">Short lessons from shipping iFinance and Know Your Spends.</p>
+<div class="posts" id="posts"></div>
+</div></section>
+
+<section class="band" id="about"><div class="wrap two">
+<div>
+<div class="kick">About</div>
+<h2>From biology labs to banking products</h2>
+<p>I studied biotechnology, then computational biology at IIIT Delhi. Working with large, messy datasets made me want to build products on top of data, and fintech was the natural next step.</p>
+<p>Since June 2023 I've been a Product Manager at ICICI Bank, currently building the Financial Dashboard. I hold myself to three principles: measure instead of guessing, treat trust as a feature, and ship the smallest release that still helps users.</p>
+<div class="edu">
+<div><b>M.Tech, Computational Biology</b><br><span>IIIT Delhi · 2021 – 2022</span></div>
+<div><b>B.Tech, Biotechnology</b><br><span>Kamaraj College of Engineering and Technology, Madurai · 2016 – 2020</span></div>
+</div>
+</div>
+<div>
+<h3>Product</h3><ul class="chips"><li>Product strategy</li><li>Roadmapping</li><li>Discovery and user research</li><li>BRS and requirements</li><li>A/B testing</li><li>Funnel analysis</li><li>Go-to-market</li><li>OKRs</li><li>Agile and Scrum</li></ul>
+<h3>Banking and fintech</h3><ul class="chips"><li>Account Aggregator</li><li>Personal finance</li><li>Consent management</li><li>DPDP and RBI compliance</li><li>Vendor RFPs</li><li>Digital banking</li></ul>
+<h3>Technical and tools</h3><ul class="chips"><li>REST APIs</li><li>AWS</li><li>Azure Cosmos DB</li><li>MongoDB</li><li>SQL</li><li>Python</li><li>Jira</li><li>CleverTap</li><li>Adobe Analytics</li></ul>
+</div>
+</div></section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer"><button class="x" id="lbx" aria-label="Close">×</button><button class="pv" id="lbp" aria-label="Previous">‹</button><figure><img id="lbi" alt=""><figcaption id="lbc"></figcaption></figure><button class="nx" id="lbn" aria-label="Next">›</button></div>
+<footer class="band" id="contact"><div class="wrap">
+<div><h2>Let's talk</h2><p>I'm open to Product Manager roles in banking, payments and fintech, and happy to walk through any of these case studies in detail.</p></div>
+<div class="contact">
+<div><span>Email</span><a href="mailto:amaithipriya12499@gmail.com">amaithipriya12499@gmail.com</a></div>
+<div><span>LinkedIn</span><a href="https://www.linkedin.com/in/amaithipriya/">linkedin.com/in/amaithipriya</a></div>
+<div><span>GitHub</span><a href="https://github.com/amaithi20332?tab=repositories">github.com/amaithi20332</a></div>
+<div><span>Location</span>Bengaluru, India · open to relocation and remote</div>
+</div>
+</div><div class="wrap copy">© 2026 Amaithi Priya S</div></footer>
+
+<script>
+{
+const tl=[
+["Jun 2023","Joined ICICI Bank as Product Manager","Owned iFinance from vendor RFP and evaluation onward.",0],
+["Aug 2023","iFinance goes live","Launched on iMobile, net banking, corporate banking and InstaBIZ.",1],
+["Sep 2023","Notifications test","Push notifications drive 219% user growth in a month.",0],
+["Oct 2023","Public launch announced","ICICI Bank announces iFinance in a press release.",0],
+["Apr 2024","Snapshots in Know Your Spends","Last month's spending compared with earlier months.",0],
+["Jun 2024","DPDP consent in Know Your Spends","Consent for spending analysis, now given by 5.7 lakh+ users.",0],
+["Aug 2024","Fetch on login","Infrastructure cost down by about a third.",0],
+["Dec 2024","Transaction re-categorization","Users can correct how their spends are categorized.",0],
+["Jan 2025","Financial Highlights and a simpler UI","Personalized category and merchant insights in Know Your Spends.",0],
+["Feb 2025","Consent management","Every active consent in one list, with one-tap revoke.",0],
+["Mar 2025","2.6 lakh+ users, 5.8 lakh+ accounts","PAN validation added on linked accounts.",1],
+["2025","Stocks and ETFs across brokers","Investment holdings from every broker added to iFinance.",0],
+["Sep 2025","Financial Dashboard starts","Requirements for one view of investments, loans and insurance, at ICICI Bank and other banks.",0],
+["Jul 2026","Financial Dashboard scope expanded","Extended to iMobile and net banking for resident, NRI and current account customers.",0],
+["Now","Building the Financial Dashboard","Taking iFinance from linked accounts to a customer's complete financial picture.",1]
+];
+document.getElementById('tl').innerHTML=tl.map(t=>`<li class="${t[3]?'big':''}"><time>${t[0]}</time><div><b>${t[1]}</b><p>${t[2]}</p></div></li>`).join('');
+
+const cases=[
+{n:"Financial Dashboard · now",t:"Financial Dashboard: a customer's complete financial picture",m:"2025 – present · in progress · the next phase of iFinance",p:"Customers saw investments, deposits and loans in separate places, and only for ICICI Bank. Holdings at other banks and brokers were invisible.",d:["Defining one dashboard with Investments and Loans views: mutual funds, demat, fixed and recurring deposits, NPS, PPF, SSY, insurance and loans","Combining ICICI Bank holdings with holdings at other institutions through Account Aggregator","Delivering it as an SDK inside iMobile and net banking, with a secure handshake that passes the customer's identifiers","Planning redirection from each holding to the matching ICICI Bank product, to drive cross-sell","Covering resident, NRI and current account customers"],r:[["2 platforms","iMobile and net banking"],["10+","product types in one view"],["In build","scope expanded July 2026"]]},
+{n:"iFinance launch",t:"iFinance: one view of every bank account",m:"2023 – present · Product Manager, from vendor RFP to launch and growth",p:"Customers bank with several banks, so the bank could see only part of their money and give only partial advice.",d:["Ran the RFP: wrote requirements, scored vendors on functional and technical criteria, and answered pre-bid queries","Took the product through security assessments and internal approvals","Launched on 4 channels with Account Aggregator consent journeys","Built a data pipeline that turns linked-account insights into personalized offers in the bank's CRM and offer engine"],r:[["2.6 lakh+","users"],["5.8 lakh+","accounts linked"],["56","banks connected"]]},
+{n:"Growth",t:"Growth: finding out what actually moves adoption",m:"2023 – 2024 · experiments and go-to-market",p:"Around 78–81% of users dropped off at the disclaimer screen, before linking a single account.",d:["Ran push-notification campaigns, then paused them to measure the effect","Tested an in-app tooltip for two weeks, then removed it","Ran campaigns across 5 channels: in-app banners, transaction receipts, YouTube explainers, branch and phone-banking training, and social media","Found UPI receipt pages gave the best banner click-through rate"],r:[["+219%","users in one month from notifications"],["+19%","accounts linked from a tooltip"]]},
+{n:"Investments",t:"Investments: shipping when the data isn't perfect",m:"2024 – 2025 · stocks, ETFs and mutual funds",p:"Requests for long investment histories almost always failed, and over half of mutual fund records were missing fields needed to calculate returns.",d:["Split long data requests into smaller time windows","Set out three release options for leadership: ship with error messages, ship holdings for everything with transactions for stocks and ETFs only, or wait","Shipped in phases: holdings, broker-level views, then transaction history with filters and PDF export"],r:[["90% → 5%","data-fetch failures for the main depositories"],["~0% → 88%","fetch success after chunking"]]},
+{n:"Cost and trust",t:"Cost, trust and control",m:"2024 – 2025 · platform and privacy",p:"Data refreshed on a fixed schedule whether or not anyone looked, and users needed clear control over what they had shared.",d:["Introduced fetch on login: data refreshes only when a user opens the app","Shipped consent management with expiry dates and one-tap revoke","Added PAN validation on linked accounts and transaction re-categorization","Worked on the move to the bank's own AWS cloud, from architecture sign-off to provisioning"],r:[["~33%","lower infrastructure cost"],["1 tap","to revoke any consent"]]},
+{n:"Know Your Spends",t:"Know Your Spends (formerly Discover)",m:"2024 – 2025 · spend tracking and budgeting",p:"Customers wanted to understand their spending, and the product had to comply with India's new data protection law (DPDP).",d:["Built DPDP-compliant consent for spending analysis and notifications","Shipped Snapshots and Financial Highlights (category and merchant insights)","Simplified the cashflow and budget charts and launched on net banking","Benchmarked against 5 Indian banks and 14 global personal finance apps to shape the roadmap"],r:[["5.7 lakh+","users gave DPDP consent"],["+300%","engagement after budgeting and new entry points"]]}
+];
+const tabs=document.getElementById('tabs'),panel=document.getElementById('panel');
+tabs.innerHTML=cases.map((c,i)=>`<button role="tab" id="tab${i}" aria-controls="panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${c.n}</button>`).join('');
+const show=i=>{const c=cases[i];
+[...tabs.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});
+panel.setAttribute('aria-labelledby','tab'+i);
+panel.innerHTML=`<div class="panel"><div><h3>${c.t}</h3><div class="meta">${c.m}</div><div class="lbl">The problem</div><p>${c.p}</p><div class="lbl">What I did</div><ul>${c.d.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="res">${c.r.map(x=>`<div><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}</div></div>`};
+tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)show([...tabs.children].indexOf(b))});
+tabs.addEventListener('keydown',e=>{const k=[...tabs.children],i=k.indexOf(document.activeElement);if(i<0)return;let n=e.key==='ArrowRight'?(i+1)%k.length:e.key==='ArrowLeft'?(i-1+k.length)%k.length:-1;if(n>-1){e.preventDefault();k[n].focus();show(n)}});
+show(0);
+
+const gap=[["Bank accounts",3],["Credit cards",1],["Investments",0],["Loans",0]];
+document.getElementById('gap').innerHTML=gap.map(g=>`<div><div class="l">${g[0]}<b>${g[1]} of 6</b></div><div class="dots">${Array.from({length:6},(_,i)=>`<i class="${i<g[1]?'y':''}"></i>`).join('')}</div></div>`).join('');
+const proof=[
+["ICICI Bank press release · 12 Oct 2023","ICICI Bank launches iFinance","Official announcement of a single view of savings and current accounts across banks, built on Account Aggregator.","https://www.icici.bank.in/about-us/news-room/2023/icici-bank-launches-ifinance-a-single-view-for-savings-and-current-accounts-across-banks"],
+["ICICI Bank product page","iFinance: accounts, stocks and ETFs","The live page covers linked bank accounts, stocks and ETFs across brokers, and consent revoke.","https://www.icici.bank.in/personal-banking/investments/ifinance"],
+["ICICI Bank product page","Know Your Spends","The live page for spend tracking, budgets, and category and merchant insights.","https://www.icici.bank.in/personal-banking/investments/know-your-spends"],
+["Apple App Store · iMobile","Discover and Snapshots in the app listing","The iMobile listing describes Discover, Budget and the Snapshots feature.","https://apps.apple.com/us/app/id375276006?l=en-us"],
+["Zee Business","Press coverage of the launch","How users get a consolidated view of accounts across banks.","https://zeebiz.com/personal-finance/banking/news-icici-bank-launches-ifinance-heres-how-users-can-access-consolidated-view-of-savings-and-current-accounts-across-banks-259238"],
+["ICICI Bank blog","Managing multiple bank accounts with iFinance","A step-by-step guide to linking accounts through Account Aggregator.","https://www.icici.bank.in/blogs/personal-finance/manage-multiple-bank-accounts"]
+];
+document.getElementById('prooflist').innerHTML=proof.map(x=>`<a class="pf" href="${x[3]}" target="_blank" rel="noopener"><span class="src">${x[0]}</span><h3>${x[1]}</h3><p>${x[2]}</p><span class="go">Open source ↗</span></a>`).join('');
+
+const posts=[
+["Turn it off: the cheapest way to prove a feature works","<p>We added push notifications and an in-app tooltip to nudge users to link accounts. Both seemed to help, so we switched them off to find out. Notifications had driven 219% user growth, and pausing them cost 29% of users. The tooltip lifted accounts linked by 19%, and removing it cut them by 39%.</p><p>A planned pause turns “I think this works” into a number leadership can act on.</p>"],
+["Shipping when your data isn't perfect","<p>Long investment histories almost never loaded. Splitting requests into smaller time windows took fetch success from near 0% to 85–88%. Over half of mutual fund records still lacked fields we needed, so I gave leadership three options: ship with errors, ship holdings for everything with transactions for stocks and ETFs only, or wait.</p><p>We shipped in phases. “Not ready” is rarely all or nothing.</p>"],
+["Consent is a product feature, not a legal checkbox","<p>Account Aggregator and the DPDP Act put users in control of their data, and consent screens are where people drop off. We used plain-language explanations, one list of every active consent with its expiry date, and one-tap revoke.</p><p>Making it easy to say no makes users more comfortable saying yes. In Know Your Spends, 5.7 lakh+ users gave consent.</p>"]
+];
+document.getElementById('posts').innerHTML=posts.map(p=>`<details class="post"><summary>${p[0]}</summary>${p[1]}</details>`).join('');
+
+const G={
+"Product screens":[
+["shot-consent.jpg","Consent management","Every active consent in one list, with one-tap revoke. Live Feb 2025."],
+["shot-investments.jpg","Investments tab","Mutual funds, stocks and ETFs, with broker filters. Pilot Jan 2025."],
+["shot-recategorize.jpg","Transaction re-categorization","Users correct how a transaction is categorized. Live Dec 2024."],
+["shot-snapshots.jpg","Snapshots in Know Your Spends","Last month's spending compared with earlier months. Live Apr 2024."],
+["shot-highlights.jpg","Financial Highlights","Personalized insights, with and without recommendations. Jan 2025."],
+["shot-invest-phases.jpg","Investments, phases 2 and 3","Transactions, sector split and a NIFTY benchmark, as designed."]],
+"Report pages":[
+["doc-release-options.jpg","Three release options","The options I set out for leadership when investment data was incomplete (FY24 report)."],
+["doc-key-updates.jpg","iFinance key updates","Fetch on login, consent management, re-categorization and PAN validation (FY25 recap)."],
+["doc-marketing-fy24.jpg","Marketing across 5 channels","Notifications, banners, videos, branch training and social media (FY24 report)."],
+["doc-discover-enhancements.jpg","Know Your Spends 2.0 enhancements","Snapshots, Financial Highlights, DPDP consent and a simpler UI (FY25 recap)."]],
+"Research slides":[
+["res-global-1.jpg","Global app benchmark (1 of 2)","Mint, Quicken, Snoop, N26, Emma and YNAB, compared feature by feature."],
+["res-global-2.jpg","Global app benchmark (2 of 2)","Empower, Tiller, Spendee, Zaim, Toss, Moneyfy and Jupiter."],
+["res-pfm-1.jpg","Personal finance management primer","Title slide of the industry primer."],
+["res-pfm-2.jpg","History: the early days","From household ledgers to Quicken and Microsoft Money."],
+["res-pfm-3.jpg","History: online and mobile","Online banking, Mint, and the fintech and AI era."],
+["res-pfm-4.jpg","How big is the market?","Market size, growth and key players."],
+["res-pfm-5.jpg","Trends and growth drivers","AI insights, predictive budgeting and open banking."],
+["res-pfm-6.jpg","How India is adopting PFM","Middle-class growth, UPI, fintechs and Account Aggregator."],
+["res-pfm-7.jpg","How our tools help","Know Your Spends and iFinance in the market picture."]]};
+const gt=document.getElementById('gtabs'),gal=document.getElementById('gal'),keys=Object.keys(G);let cur=[],ci=0;
+gt.innerHTML=keys.map((k,i)=>`<button role="tab" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${k} (${G[k].length})</button>`).join('');
+const gshow=i=>{[...gt.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});cur=G[keys[i]];
+gal.innerHTML=cur.map((g,j)=>`<button data-i="${j}" aria-label="View ${g[1]}"><div class="th"><img src="img/${g[0]}" alt="${g[1]}" loading="lazy"></div><span><b>${g[1]}</b>${g[2]}</span></button>`).join('')};
+gt.addEventListener('click',e=>{const b=e.target.closest('button');if(b)gshow([...gt.children].indexOf(b))});
+gshow(0);
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');let last=null;
+const open=j=>{ci=(j+cur.length)%cur.length;const g=cur[ci];lbi.src='img/'+g[0];lbi.alt=g[1];lbc.textContent=g[1]+' · '+g[2]+' ('+(ci+1)+' of '+cur.length+')';lb.classList.add('on');document.getElementById('lbx').focus()};
+const close=()=>{lb.classList.remove('on');if(last)last.focus()};
+gal.addEventListener('click',e=>{const b=e.target.closest('button');if(b){last=b;open(+b.dataset.i)}});
+document.getElementById('lbx').onclick=close;document.getElementById('lbp').onclick=()=>open(ci-1);document.getElementById('lbn').onclick=()=>open(ci+1);
+lb.addEventListener('click',e=>{if(e.target===lb)close()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')open(ci-1);if(e.key==='ArrowRight')open(ci+1)});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const count=el=>{const n=+el.dataset.n,p=el.dataset.p||'',s=el.dataset.s||'',d=n%1?1:0,t0=performance.now();
+const step=t=>{const k=Math.min(1,(t-t0)/1200),v=n*(1-Math.pow(1-k,3));el.textContent=p+v.toFixed(d)+s;if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;
+if(el.dataset.w)el.style.width=el.dataset.w+'%';else if(!reduce)count(el);io.unobserve(el)}),{threshold:.4});
+document.querySelectorAll('.rcard strong[data-n]').forEach(el=>io.observe(el));
+document.querySelectorAll('.track i').forEach(el=>{if(reduce)el.style.width=el.dataset.w+'%';else io.observe(el)});
+
+const links=[...document.querySelectorAll('.links a')];
+const navIo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+links.forEach(a=>{const s=document.querySelector(a.getAttribute('href'));if(s)navIo.observe(s)});
+}
+</script>
+</body>
+</html>
