@@ -417,7 +417,7 @@ const G={
 const gt=document.getElementById('gtabs'),gal=document.getElementById('gal'),keys=Object.keys(G);let cur=[],ci=0;
 gt.innerHTML=keys.map((k,i)=>`<button role="tab" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${k} (${G[k].length})</button>`).join('');
 const gshow=i=>{[...gt.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});cur=G[keys[i]];
-gal.innerHTML=cur.map((g,j)=>`<button data-i="${j}" aria-label="View ${g[1]}"><div class="th"><img src="img/${g[0]}" alt="${g[1]}" loading="lazy"></div><span><b>${g[1]}</b>${g[2]}</span></button>`).join('')};
+gal.innerHTML=cur.map((g,j)=>`<button data-i="${j}" aria-label="View ${g[1]}"><div class="th"><img src="${g[0]}" alt="${g[1]}" loading="lazy"></div><span><b>${g[1]}</b>${g[2]}</span></button>`).join('')};
 gt.addEventListener('click',e=>{const b=e.target.closest('button');if(b)gshow([...gt.children].indexOf(b))});
 gshow(0);
 const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');let last=null;
